@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Menubar from './Components/Menubar/Menubar';
 import AllProducts from './Components/AllProducts/AllProducts';
 import { useState } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -29,3 +31,4 @@ function App() {
 }
 
 export default App;
+AOS.init()

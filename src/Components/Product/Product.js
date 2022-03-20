@@ -3,10 +3,10 @@ import ReactModal from "../ReactModal/ReactModal";
 import "./Product.css";
 
 const Product = (props) => {
-  const {id, title, price, category, description, image } = props.product;
+  const {title, price, image } = props.product;
   const {plus, minus} = props.counter;
   return (
-    <div className="col">
+    <div data-aos="flip-right" className="col">
       <div className="card h-100">
         <img className="card-img-top" src={image} alt="Card image cap"></img>
         <div className="card-body d-flex flex-column">
