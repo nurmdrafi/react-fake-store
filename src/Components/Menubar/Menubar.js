@@ -1,22 +1,6 @@
-import React, { useState } from "react";
 import "./Menubar.css";
 
-const Menubar = () => {
-  const [count, setCount] = useState(1);
-
-  const counter = {
-    plus: function () {
-      let newCount = count + 1;
-      setCount(newCount);
-    },
-    minus: function () {
-      if (count <= 0) {
-        return;
-      }
-      let newCount = count - 1;
-      setCount(newCount);
-    },
-  };
+const Menubar = (props) => {
   return (
     <div>
       <div className="container">
@@ -24,7 +8,7 @@ const Menubar = () => {
         <div className="col-md-10 menu-container">
           <a href="">Home</a>
           <a href="">Contact</a>
-          <a href="">Cart</a>
+          <a href="">Cart {props.count}</a>
           <a href="">Login</a>
         </div>
       </div>
