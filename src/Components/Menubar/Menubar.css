@@ -1,0 +1,8 @@
+.menu-container{
+    text-align: right;
+}
+.menu-container a {
+  text-decoration: none;
+  margin-left: 50px;
+  color: black;
+}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Buttons from "../Buttons/Buttons";
+import "./Menubar.css";
 
 const Menubar = () => {
   const [count, setCount] = useState(1);
@@ -19,8 +19,15 @@ const Menubar = () => {
   };
   return (
     <div>
-      <h1>{count}</h1>
-      <Buttons count={counter}></Buttons>
+      <div className="container">
+        <div className="col-md-2">Logo</div>
+        <div className="col-md-10 menu-container">
+          <a href="">Home</a>
+          <a href="">Contact</a>
+          <a href="">Cart</a>
+          <a href="">Login</a>
+        </div>
+      </div>
     </div>
   );
 };
