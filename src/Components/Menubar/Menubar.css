@@ -1,8 +1,12 @@
 .menu-container{
     text-align: right;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 .menu-container a {
   text-decoration: none;
-  margin-left: 50px;
+  margin-left: 20px;
   color: black;
+  font-size: 18px;
 }

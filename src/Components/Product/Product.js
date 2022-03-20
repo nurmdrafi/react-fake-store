@@ -1,8 +1,9 @@
 import React from "react";
+import ReactModal from "../ReactModal/ReactModal";
 import "./Product.css";
 
 const Product = (props) => {
-  const { title, price, category, description, image } = props.product;
+  const {id, title, price, category, description, image } = props.product;
   const {plus, minus} = props.counter;
   return (
     <div className="col">
@@ -10,22 +11,14 @@ const Product = (props) => {
         <img className="card-img-top" src={image} alt="Card image cap"></img>
         <div className="card-body d-flex flex-column">
           <h5 className="card-title">{title}</h5>
-          <h3>Price: {price}</h3>
-          <h4>{category}</h4>
-          <p className="card-text">{description.slice(0, 150) + "..."}</p>
-          <div className="mt-auto">
+          <h3 className="mt-auto">Price: ${price}</h3>
             <div className="d-flex justify-content-around">
               <button className="btn btn-primary" onClick={plus}>
                 Add to Cart
               </button>
-              <button className="btn btn-danger" onClick={minus}>
-                Delete
-              </button>
-              <button className="btn btn-success">
-                Details
-              </button>
+              <button className="btn btn-danger" onClick={minus}>Delete</button>
+              <ReactModal product={props.product}></ReactModal>
             </div>
-          </div>
         </div>
       </div>
     </div>
