@@ -1,13 +1,14 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Menubar from './Components/Menubar/Menubar';
-import AllProducts from './Components/AllProducts/AllProducts';
-import { useState } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Menubar from "./Components/Menubar/Menubar";
+import AllProducts from "./Components/AllProducts/AllProducts";
+import { useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Routes, Route } from "react-router-dom";
-import OrderReview from './Components/OrderReview/OrderReview';
-import Login from './Components/Login/Login';
+import OrderReview from "./Components/OrderReview/OrderReview";
+import Login from "./Components/Login/Login";
+import NotFound from "./Components/NotFound/NotFound";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -29,15 +30,25 @@ function App() {
     <div className="App">
       <Menubar count={count}></Menubar>
       <Routes>
-        <Route path="/" element={<AllProducts counter={counter}></AllProducts>}></Route>
-        <Route path="/home" element={<AllProducts counter={counter}></AllProducts>}></Route>
-        <Route path="/order-review" element={<OrderReview></OrderReview>}></Route>
+        <Route
+          path="/"
+          element={<AllProducts counter={counter}></AllProducts>}
+        ></Route>
+        <Route
+          path="/home"
+          element={<AllProducts counter={counter}></AllProducts>}
+        ></Route>
+        <Route
+          path="/order-review"
+          element={<OrderReview></OrderReview>}
+        ></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
-      
     </div>
   );
 }
 
 export default App;
-AOS.init()
+AOS.init();
