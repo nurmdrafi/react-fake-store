@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
+import useProducts from "../../hooks/useProducts";
 import Product from "../Product/Product";
 
 const AllProducts = (props) => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => setProducts(json));
-  }, []);
+  const [products, setProducts] = useProducts()
   return (
     <div className="container">
         <h1>All Products</h1>
