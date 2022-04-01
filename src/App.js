@@ -5,6 +5,9 @@ import AllProducts from './Components/AllProducts/AllProducts';
 import { useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Routes, Route } from "react-router-dom";
+import OrderReview from './Components/OrderReview/OrderReview';
+import Login from './Components/Login/Login';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -25,7 +28,13 @@ function App() {
   return (
     <div className="App">
       <Menubar count={count}></Menubar>
-      <AllProducts counter={counter}></AllProducts>
+      <Routes>
+        <Route path="/" element={<AllProducts counter={counter}></AllProducts>}></Route>
+        <Route path="/home" element={<AllProducts counter={counter}></AllProducts>}></Route>
+        <Route path="/order-review" element={<OrderReview></OrderReview>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+      </Routes>
+      
     </div>
   );
 }

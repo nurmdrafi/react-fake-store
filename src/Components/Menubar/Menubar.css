@@ -4,9 +4,16 @@
     justify-content: end;
     align-items: center;
 }
-.menu-container a {
+.menu-container nav{
+  display: flex;
+}
+.menu-container a, button {
   text-decoration: none;
   margin-left: 20px;
   color: black;
   font-size: 18px;
+}
+.menu-container button{
+  background-color: transparent;
+  border: none;
 }
